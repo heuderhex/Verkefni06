@@ -1,6 +1,7 @@
 @import './styles/reset.scss'
 @import './styles/base.scss'
 @import './styles/config.scss'
+@import './styles/cards.scss'
 
   /* Almennt */
   
@@ -11,44 +12,7 @@
     font-size: var(--font-size-base);
   }
   
-  /*** Leturgerðir sem við sækjum úr fonts/ möppu ***/
-  @font-face {
-    font-family: 'Matemasie-Regular';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('./fonts/Matemasie-Regular.ttf') format('woff2');
-  }
   
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('./fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('woff2');
-  }
-  
-  @font-face {
-    font-family: 'Open Sans';
-    font-weight: 700;
-    src: url('./fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('woff2');
-  }
-  
-  /*** Allt meginmál notar open sans ***/
-  html,
-  input,
-  select,
-  button {
-    font-family: var(--font-family-base);
-  }
-  
-  /*** Allar fyrirsagnir nota Matemasie regular ***/
-  h1,
-  h2,
-  h3,
-  legend {
-    font-family: var(--font-family-heading);
-  }
   
   /** Lætur myndir aldrei taka meira pláss en foreldri skilgreinir **/
   img {
@@ -112,99 +76,8 @@
       fade-in;
   }
   
-  /**
-   * Eftirfarandi setur upp grunn umbrot (layout) síðu með flexbox.
-   * Við förum yfir flexbox í viku 4 en þangað til er hægt að nota þetta
-   * sem grunn og án breytinga.
-   * Athugið að til þess að þetta virki þar að setja <div class="wrapper"> utan um allt efni 
-   * innan <body>.
-   */
-  .wrapper {
-    /* Notum grid hér til að setja upp bil á milli header, meginmáls og fóts */
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 100%;
-  
-    /* grid items eru miðjuð */
-    justify-items: center;
-  
-    gap: var(--vertical-space);
-  
-    width: 100%;
-    min-height: 100vh;
-  
-    background-color: var(--color-background-primary);
-  }
-  
-  @media (min-width: 800px) {
-    .wrapper {
-      gap: var(--vertical-space-large);
-    }
-  }
-  
-  .wrapper .wrapper-content {
-    width: var(--width-offset);
-    max-width: var(--max-width);
-  }
-  
-  .wrapper .wrapper-nav {
-    margin-bottom: var(--spacing);
-  }
-  
-  @media (min-width: 800px) {
-    .wrapper .wrapper-content {
-      display: grid;
-      grid-template-columns: repeat(var(--columns), 1fr);
-      gap: var(--gutter);
-    }
-  
-    .wrapper .wrapper-nav {
-      grid-column: span 2;
-    }
-  
-    .wrapper .wrapper-main {
-      grid-column: span 10;
-    }
-  }
-  
+ 
   /* Það sem fylgir er tillaga að uppbyggingu á selectorum fyrir verkefnið */
-  
-  /** Haus á síðum **/
-  
-  header {
-    padding: var(--spacing) calc(var(--spacing) * 1.5);
-    width: 100%;
-  
-    background-color: var(--color-background-secondary);
-    border-bottom: var(--border-with-background);
-    text-align: center;
-  }
-  
-  /** Valmynd **/
-  
-  nav {
-    width: 100%;
-  }
-  
-  nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--spacing);
-  
-    list-style: none;
-  }
-  
-  nav ul li {
-    margin-bottom: calc(var(--spacing) / 2);
-    text-align: left;
-  }
-  
-  @media (min-width: 800px) {
-    nav ul {
-      display: block;
-    }
-  }
   
   /** Meginmál og efni forsíðu **/
   
